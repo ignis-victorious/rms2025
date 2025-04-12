@@ -1,13 +1,37 @@
 #  __________________
-
+#  Import LIBRARIES
+import flet as ft
+#  Import FILES
 #  __________________
 
 
-import flet as ft
-
-
 def main(page: ft.Page) -> None:
-    random_text = ft.Text("Hello World", size=50, data=0)
+    page.title = "Retail Management System"
+    random_text = ft.Text("Retail Management System - 2025", size=35, data=0)
+
+    #  AppBar
+    page.appbar = ft.AppBar(
+        leading=ft.Row(
+            [
+                ft.Text("RMS", weight=ft.FontWeight.BOLD, size=25),
+                ft.Text(
+                    "2025",
+                    weight=ft.FontWeight.BOLD,
+                    color=ft.Colors.ORANGE_500,
+                    size=25,
+                    italic=True,
+                ),
+            ]
+        ),
+        bgcolor=ft.colors.INDIGO_100,
+        title=ft.Text("RMS System - 2025"),
+        actions=[
+            ft.ElevatedButton("Home"),
+            ft.ElevatedButton("Order"),
+            ft.ElevatedButton("Customers"),
+            ft.ElevatedButton("Cachier"),
+        ],
+    )
 
     page.add(
         ft.SafeArea(
